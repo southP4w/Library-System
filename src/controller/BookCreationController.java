@@ -29,7 +29,7 @@ import model.users.User;
 import model.users.UserBag;
 
 public class BookCreationController implements Initializable
-{ // FXML variables:
+{
 	@FXML
 	private TextField textFieldEnterTitle, textFieldEnterISBN, textFieldAuthorFirstName, textFieldAuthorLastName, textFieldEnterCopies;
 	@FXML
@@ -40,7 +40,6 @@ public class BookCreationController implements Initializable
 	private BookBag library;
 	private UserBag userBag;
 	private User currentUser;
-
 	private LinkedList<Author> authors;
 	private LinkedList<String> authorsFirstNames, authorsLastNames;
 

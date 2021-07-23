@@ -31,7 +31,7 @@ import model.users.User;
 import model.users.UserBag;
 
 public class UserCreationController implements Initializable
-{ // FXML variables:
+{
 	@FXML
 	private Label labelCurrentUser, labelAlertMessage;
 	@FXML

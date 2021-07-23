@@ -42,9 +42,9 @@ public class UserHistoryController implements Initializable
 		currentUser = MainMenuController.getCurrentUser();
 		selectedUser = AdminPanelController.getSelectedUSer();
 		ObservableList<Transaction> history;
-		if (selectedUser != null) {
+		if (selectedUser != null)
 			history = FXCollections.observableArrayList(selectedUser.getUserTransactions());
-		} else
+		else
 			history = FXCollections.observableArrayList(currentUser.getUserTransactions());
 		populateTableViewUserHistory(history);
 	}
