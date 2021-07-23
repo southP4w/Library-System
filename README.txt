@@ -18,3 +18,6 @@ Other than States.txt, the files in this directory are all dummy information for
 This is where all the Library data is stored (Users, Admins, Books, overdues, etc.) so that everything is saved when the program is closed.
 
 This program is structured using the typical MVC Design Pattern.
+
+
+Feel free to contribute if you'd like!
