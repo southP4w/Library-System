@@ -1,4 +1,4 @@
-module gargiullo_librarysystem
+module library_system
 {
 	exports controller;
 	exports model.users;
