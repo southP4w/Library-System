@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="jar" build-on-make="true" name="gargiullo_librarysystem:jar">
+    <output-path>$PROJECT_DIR$/out/artifacts/gargiullo_librarysystem_jar</output-path>
+    <root id="archive" name="gargiullo_librarysystem.jar">
+      <element id="module-output" name="gargiullo_librarysystem" />
+    </root>
+  </artifact>
+</component>
