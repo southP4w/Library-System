@@ -19,15 +19,33 @@ import model.users.ContactInfo;
 import model.users.Name;
 import model.users.User;
 
+/**
+ * This is the starting Class for the entire project. The project life-cycle is as follows:
+ * <br>1.) init()
+ * <br>2.) start(Stage)
+ * <br>3.) stop()
+ *
+ * @author Daniel Gargiullo
+ */
 public class Main extends Application
 {
 	private static UserBag userBag;
 	private static BookBag library;
 
+	/**
+	 * The starting point of the application. This can essentially be commented out unless using command line args.
+	 * @param args Command-line arguments
+	 */
 	public static void main(String[] args) {
 		launch(args);
 	}
 
+	/**
+	 * The init method.
+	 *
+	 * Tries to load from 'persistent/', and then checks whether the UserBag contains both a default Admin (Jane) and a
+	 * default User (John).
+	 */
 	@Override
 	public void init() {
 		try {
@@ -76,19 +94,23 @@ public class Main extends Application
 		}
 	}
 
-	public static UserBag getUserBag() { return userBag; }
+	public static UserBag getUserBag() {
+		return userBag;
+	}
 
-	public static BookBag getLibrary() { return library; }
+	public static BookBag getLibrary() {
+		return library;
+	}
 
 	private void fillBookBag() throws FileNotFoundException {
 		String[] titles = Utilities.emitTitles("Input Files/textbook_titles.txt"), isbns = Utilities.emitISBNs("Input Files/textbook_isbns.txt");
 		Name[] names = Utilities.emitNames("Input Files/First_Names.txt", "Input Files/Last_Names.txt");
 		LinkedList<Book> books = new LinkedList<>();
-		for (int i = 0 ; i < titles.length ; i++)
+		for (int i = 0; i < titles.length; i++)
 			books.add(new Book(titles[i], isbns[i]));
 		Random randomIndex = new Random(), numberOfAuthors = new Random();
 		for (Book book : books) {
-			for (int i = 0 ; (numberOfAuthors.nextInt(4) + 1) > i++ ;)
+			for (int i = 0; (numberOfAuthors.nextInt(4) + 1) > i++; )
 				book.addAuthors((new Author(names[randomIndex.nextInt(2_000)].getFirstName(), names[randomIndex.nextInt(2_000)].getLastName())));
 			library.insert(book);
 		}
@@ -97,7 +119,7 @@ public class Main extends Application
 	private void fillUserBag() throws FileNotFoundException {
 		Name[] names = Utilities.emitNames("Input Files/First_Names.txt", "Input Files/Last_Names.txt");
 		Random randomIndex = new Random();
-		for (int i = 0 ; i < 100 ; i++)
+		for (int i = 0; i < 100; i++)
 			userBag.insert(new User("user" + i, "default", new ContactInfo(names[randomIndex.nextInt(100)])));
 	}
 }
