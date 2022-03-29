@@ -1,0 +1,16 @@
+<component name="libraryTable">
+  <library name="javafx-swt-18-windows">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/lib/jfx18-windows/lib/javafx-swt.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/jfx18-windows/lib/javafx.base.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/jfx18-windows/lib/javafx.controls.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/jfx18-windows/lib/javafx.fxml.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/jfx18-windows/lib/javafx.graphics.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/jfx18-windows/lib/javafx.media.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/jfx18-windows/lib/javafx.swing.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/jfx18-windows/lib/javafx.web.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>
