@@ -8,6 +8,5 @@
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="library" exported="" name="javafx-swt-18-windows" level="project" />
-    <orderEntry type="library" exported="" scope="PROVIDED" name="javafx-swt-18-linux" level="project" />
   </component>
 </module>

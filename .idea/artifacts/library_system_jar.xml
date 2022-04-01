@@ -3,14 +3,14 @@
     <output-path>$PROJECT_DIR$/out/artifacts/library_system_jar</output-path>
     <root id="archive" name="library_system.jar">
       <element id="module-output" name="library_system" />
-      <element id="extracted-dir" path="$PROJECT_DIR$/lib/openjfx-18_linux-x64_bin-sdk/javafx-sdk-18/lib/javafx-swt.jar" path-in-jar="/" />
-      <element id="extracted-dir" path="$PROJECT_DIR$/lib/openjfx-18_linux-x64_bin-sdk/javafx-sdk-18/lib/javafx.base.jar" path-in-jar="/" />
-      <element id="extracted-dir" path="$PROJECT_DIR$/lib/openjfx-18_linux-x64_bin-sdk/javafx-sdk-18/lib/javafx.controls.jar" path-in-jar="/" />
-      <element id="extracted-dir" path="$PROJECT_DIR$/lib/openjfx-18_linux-x64_bin-sdk/javafx-sdk-18/lib/javafx.fxml.jar" path-in-jar="/" />
-      <element id="extracted-dir" path="$PROJECT_DIR$/lib/openjfx-18_linux-x64_bin-sdk/javafx-sdk-18/lib/javafx.graphics.jar" path-in-jar="/" />
-      <element id="extracted-dir" path="$PROJECT_DIR$/lib/openjfx-18_linux-x64_bin-sdk/javafx-sdk-18/lib/javafx.media.jar" path-in-jar="/" />
-      <element id="extracted-dir" path="$PROJECT_DIR$/lib/openjfx-18_linux-x64_bin-sdk/javafx-sdk-18/lib/javafx.swing.jar" path-in-jar="/" />
-      <element id="extracted-dir" path="$PROJECT_DIR$/lib/openjfx-18_linux-x64_bin-sdk/javafx-sdk-18/lib/javafx.web.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/lib/jfx18-windows/lib/javafx-swt.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/lib/jfx18-windows/lib/javafx.base.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/lib/jfx18-windows/lib/javafx.controls.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/lib/jfx18-windows/lib/javafx.fxml.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/lib/jfx18-windows/lib/javafx.graphics.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/lib/jfx18-windows/lib/javafx.media.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/lib/jfx18-windows/lib/javafx.swing.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/lib/jfx18-windows/lib/javafx.web.jar" path-in-jar="/" />
     </root>
   </artifact>
 </component>
