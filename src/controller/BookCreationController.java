@@ -3,6 +3,7 @@ package controller;
 import java.io.IOException;
 import java.net.URL;
 import java.util.LinkedList;
+import java.util.Objects;
 import java.util.ResourceBundle;
 
 import javafx.collections.FXCollections;
@@ -28,6 +29,9 @@ import model.books.BookBag;
 import model.users.User;
 import model.users.UserBag;
 
+/**
+ * Controller class for BookCreationView.fxml
+ */
 public class BookCreationController implements Initializable
 {
 	@FXML
@@ -43,6 +47,13 @@ public class BookCreationController implements Initializable
 	private LinkedList<Author> authors;
 	private LinkedList<String> authorsFirstNames, authorsLastNames;
 
+	/**
+	 * Called immediately upon entering the BookCreation page of the application. Retrieves the Books, Users, current
+	 * User from the Main class, and sets the variables for creating a Book to be added to the database.
+	 *
+	 * @param url            Filepath or webpage
+	 * @param resourceBundle Any bundles for locale-specific Objects.
+	 */
 	@Override
 	public void initialize(URL url, ResourceBundle resourceBundle) {
 		library = Main.getLibrary();
@@ -54,6 +65,12 @@ public class BookCreationController implements Initializable
 		authorsLastNames = new LinkedList<>();
 	}
 
+	/**
+	 * Called when the 'Add Author to Book' button is clicked. Adds the information in the fields to the Book being
+	 * created.
+	 *
+	 * @param actionEvent 'Add Author to Book' button was clicked.
+	 */
 	@FXML
 	void buttonAddAuthorClicked(ActionEvent actionEvent) {
 		String authorFirstName = textFieldAuthorFirstName.getText(), authorLastName = textFieldAuthorLastName.getText();
@@ -66,9 +83,15 @@ public class BookCreationController implements Initializable
 		listViewAuthorsLastNames.setItems(lastNames);
 	}
 
+	/**
+	 * Called when the 'Back' button is clicked
+	 *
+	 * @param actionEvent 'Back' button was clicked.
+	 * @throws IOException if the specified filepath isw invalid.
+	 */
 	@FXML
 	void buttonBackClicked(ActionEvent actionEvent) throws IOException {
-		Parent root = FXMLLoader.load(getClass().getResource("/view/AdminPanelView.fxml"));
+		Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("/view/AdminPanelView.fxml")));
 		Scene mainScene = new Scene(root);
 		Stage mainSceneStage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
 		labelCurrentUser.setText("Logged in as:\n" + currentUser.getUsername());
@@ -78,6 +101,11 @@ public class BookCreationController implements Initializable
 		mainSceneStage.show();
 	}
 
+	/**
+	 * Called when the 'Done' button is clicked. Adds the new Book to the database, if it meets the requirements.
+	 *
+	 * @param actionEvent 'Back' button was clicked.
+	 */
 	@FXML
 	void buttonDoneClicked(ActionEvent actionEvent) {
 		String title = textFieldEnterTitle.getText(), isbn = textFieldEnterISBN.getText();
@@ -116,6 +144,9 @@ public class BookCreationController implements Initializable
 		labelAlertMessage.setVisible(true);
 	}
 
+	/**
+	 * Method for clearing all fields in this Scene.
+	 */
 	private void clearAllFields() {
 		textFieldAuthorFirstName.clear();
 		textFieldAuthorLastName.clear();

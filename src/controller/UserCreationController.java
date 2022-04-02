@@ -2,6 +2,7 @@ package controller;
 
 import java.io.IOException;
 import java.net.URL;
+import java.util.Objects;
 import java.util.ResourceBundle;
 
 import javafx.event.ActionEvent;
@@ -30,6 +31,9 @@ import model.users.Name;
 import model.users.User;
 import model.users.UserBag;
 
+/**
+ * Controller class for UserCreationView.fxml
+ */
 public class UserCreationController implements Initializable
 {
 	@FXML
@@ -52,6 +56,12 @@ public class UserCreationController implements Initializable
 	private UserBag userBag;
 	private User currentUser;
 
+	/**
+	 * Called immediately upon entering the UserCreation page of the application.
+	 *
+	 * @param url            Filepath or web page
+	 * @param resourceBundle Any bundles for locale-specific Objects.
+	 */
 	@Override
 	public void initialize(URL url, ResourceBundle resourceBundle) {
 		userBag = Main.getUserBag();
@@ -70,9 +80,15 @@ public class UserCreationController implements Initializable
 		}
 	}
 
+	/**
+	 * Called when the 'Back' button is clicked. Returns to MainMenu.
+	 *
+	 * @param actionEvent 'Back' button clicked.
+	 * @throws IOException if the specified filepath is invalid.
+	 */
 	@FXML
 	void backButtonClicked(ActionEvent actionEvent) throws IOException {
-		Parent root = FXMLLoader.load(getClass().getResource("/view/MainMenuView.fxml"));
+		Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("/view/MainMenuView.fxml")));
 		Scene mainScene = new Scene(root);
 		Stage mainSceneStage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
 		if (currentUser != null) {
@@ -87,6 +103,11 @@ public class UserCreationController implements Initializable
 		mainSceneStage.show();
 	}
 
+	/**
+	 * Called when the 'Create' button is clicked. If the requirements are met, add the new User to the database.
+	 *
+	 * @param actionEvent 'Create' button was clicked.
+	 */
 	@FXML
 	void createButtonClicked(ActionEvent actionEvent) {
 		String username = textFieldEnterUsername.getText(), password = passwordFieldEnterPassword.getText(),
@@ -128,17 +149,30 @@ public class UserCreationController implements Initializable
 		}
 	}
 
+	/**
+	 * This method has not been written yet.
+	 *
+	 * @param mouseEvent *
+	 */
 	@FXML
-	void uploadProfilePic(MouseEvent actionEvent) {
+	void uploadProfilePic(MouseEvent mouseEvent) {
 
 	}
 
+	/**
+	 * Method for handling the Label. This method has not been written yet.
+	 *
+	 * @param alertMessage *
+	 */
 	private void displayAlertMessage(String alertMessage) {
 		labelAlertMessage.setText(alertMessage);
 		labelAlertMessage.setWrapText(true);
 		labelAlertMessage.setVisible(true);
 	}
 
+	/**
+	 * Method for clearing all fields in this Scene.
+	 */
 	private void clearAllFields() {
 		textFieldEnterUsername.clear();
 		textFieldEnterPhoneNumber.clear();
