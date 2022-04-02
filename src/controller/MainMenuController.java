@@ -189,8 +189,8 @@ public class MainMenuController implements Initializable
 	@FXML
 	void saveMenuItemClicked(ActionEvent actionEvent) {
 		try {
-			Utilities.save(userBag, "Persistent/userbag");
-			Utilities.save(library, "Persistent/bookbag");
+			Utilities.save(userBag, "out/Persistent/userbag");
+			Utilities.save(library, "out/Persistent/bookbag");
 		} catch (Exception exception) {
 			exception.printStackTrace();
 		}
