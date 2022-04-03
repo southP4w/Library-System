@@ -8,6 +8,9 @@ import java.util.LinkedList;
 
 import model.books.Book;
 
+/**
+ * Class pertaining to User borrow and return transactions.
+ */
 public class Transaction implements Serializable
 {
 	private static final long serialVersionUID = 9L;
@@ -15,9 +18,19 @@ public class Transaction implements Serializable
 	private static final DateTimeFormatter dateTimeFormatter = DateTimeFormatter.ofPattern("E, MM/dd/yyyy h:mma");
 	private String title, isbn, timeBorrowedString, timeDueString, timeReturnedString, transactionType;
 
+	/**
+	 * Default constructor for a Transaction object
+	 */
 	public Transaction() {
 	}
 
+	/**
+	 * 3-parameter constructor for a Transaction object
+	 *
+	 * @param title   String to be used as the (Book) title in this Transaction
+	 * @param isbn    String to be used as the Book's ISBN in this transaction
+	 * @param timeDue LocalDateTime object to be used for the time the Book is due
+	 */
 	public Transaction(String title, String isbn, LocalDateTime timeDue) {
 		this.title = title;
 		this.isbn = isbn;
@@ -26,6 +39,14 @@ public class Transaction implements Serializable
 		transactionType = "borrowed";
 	}
 
+	/**
+	 * 4-parameter constructor for a Transaction object
+	 *
+	 * @param title        String to be used as the (Book) title in this Transaction
+	 * @param isbn         String to be used as the Book's ISBN in this transaction
+	 * @param timeDue      LocalDateTime object to be used for the time the Book is due
+	 * @param timeReturned LocalDateTime object to be used for the time the Book was returned
+	 */
 	public Transaction(String title, String isbn, LocalDateTime timeDue, LocalDateTime timeReturned) {
 		this.title = title;
 		this.isbn = isbn;
@@ -34,38 +55,155 @@ public class Transaction implements Serializable
 		transactionType = "returned";
 	}
 
-	public String getTitle() { return title; }
+	/**
+	 * Get the title of the Book in this Transaction.
+	 *
+	 * @return the title of the Book in this Transaction.
+	 */
+	public String getTitle() {
+		return title;
+	}
 
-	public void setTitle(String title) { this.title = title; }
+	/**
+	 * Set the title of the Book in this Transaction.
+	 *
+	 * @param title String to be used as the Book in this Transaction's title
+	 */
+	public void setTitle(String title) {
+		this.title = title;
+	}
 
-	public String getIsbn() { return isbn; }
+	/**
+	 * Get the ISBN of the Book on this Transaction.
+	 *
+	 * @return the ISBN of the Book on this Transaction.
+	 */
+	public String getIsbn() {
+		return isbn;
+	}
 
-	public void setIsbn(String isbn) { this.isbn = isbn; }
+	/**
+	 * Set the ISBN of the Book on this Transaction.
+	 *
+	 * @param isbn String to be used as the Book in this Transaction's ISBN
+	 */
+	public void setIsbn(String isbn) {
+		this.isbn = isbn;
+	}
 
-	public String getTimeBorrowed() { return timeBorrowedString; }
+	/**
+	 * Get the time the Book on this Transaction was borrowed, in the form of a String.
+	 *
+	 * @return the time the Book on this Transaction was borrowed, in the form of a String.
+	 */
+	public String getTimeBorrowed() {
+		return timeBorrowedString;
+	}
 
-	public void setTimeBorrowed(LocalDateTime timeBorrowed) { this.timeBorrowedString = dateTimeFormatter.format(timeBorrowed); }
+	/**
+	 * Set the time the Book on this Transaction was borrowed.
+	 *
+	 * @param timeBorrowed LocalDateTime object to be used for when the Book on this Transaction was borrowed
+	 */
+	public void setTimeBorrowed(LocalDateTime timeBorrowed) {
+		this.timeBorrowedString = dateTimeFormatter.format(timeBorrowed);
+	}
 
-	public String getTimeDue() { return timeDueString; }
+	/**
+	 * Get the time the Book on this Transaction is due to be returned, in the form of a String.
+	 *
+	 * @return the time the Book on this Transaction is due to be returned, in the form of a String.
+	 */
+	public String getTimeDue() {
+		return timeDueString;
+	}
 
-	public void setTimeDue(LocalDateTime timeDue) { this.timeDueString = dateTimeFormatter.format(timeDue); }
+	/**
+	 * Set the time the Book on this Transaction is due to be returned.
+	 *
+	 * @param timeDue LocalDateTime object to be used for when the Book on this Transaction is due to be returned
+	 */
+	public void setTimeDue(LocalDateTime timeDue) {
+		this.timeDueString = dateTimeFormatter.format(timeDue);
+	}
 
-	public String getTimeReturned() { return timeReturnedString; }
+	/**
+	 * Get the time the Book on this Transaction was returned, in the form of a String.
+	 *
+	 * @return the time the Book on this Transaction was returned, in the form of a String.
+	 */
+	public String getTimeReturned() {
+		return timeReturnedString;
+	}
 
-	public void setTimeReturned(LocalDateTime timeReturned) { this.timeReturnedString = dateTimeFormatter.format(timeReturned); }
+	/**
+	 * Set the time the Book on this Transaction was returned.
+	 *
+	 * @param timeReturned LocalDateTime object to be used for when the Book on this Transaction is due to be returned
+	 */
+	public void setTimeReturned(LocalDateTime timeReturned) {
+		this.timeReturnedString = dateTimeFormatter.format(timeReturned);
+	}
 
-	public String getTimeBorrowedString() { return timeBorrowedString; }
+	/**
+	 * Get the time the Book on this Transaction was borrowed, in the form of a String.
+	 *
+	 * @return the time the Book on this Transaction was borrowed, in the form of a String.
+	 */
+	public String getTimeBorrowedString() {
+		return timeBorrowedString;
+	}
 
-	public void setTimeBorrowedString(String timeBorrowedString) { this.timeBorrowedString = timeBorrowedString; }
+	/**
+	 * Set the time this Book on this transaction was borrowed, using a String.
+	 *
+	 * @param timeBorrowedString String to be used as the time the Book on this transaction was borrowed.
+	 */
+	public void setTimeBorrowedString(String timeBorrowedString) {
+		this.timeBorrowedString = timeBorrowedString;
+	}
 
-	public String getTimeDueString() { return timeDueString; }
+	/**
+	 * Get the time the Book on this Transaction is due to be returned, in the form of a String.
+	 *
+	 * @return the time the Book on this Transaction is due to be returned, in the form of a String.
+	 */
+	public String getTimeDueString() {
+		return timeDueString;
+	}
 
-	public void setTimeDueString(String timeDueString) { this.timeDueString = timeDueString; }
+	/**
+	 * Set the time the Book on this Transaction is due to be returned, in the form of a String.
+	 *
+	 * @param timeDueString String to be used as the time the Book on this Transaction is due to be returned
+	 */
+	public void setTimeDueString(String timeDueString) {
+		this.timeDueString = timeDueString;
+	}
 
-	public String getTimeReturnedString() { return timeReturnedString; }
+	/**
+	 * Get the time the Book on this Transaction was returned, in the form of a String.
+	 *
+	 * @return the time the Book on this Transaction was returned, in the form of a String.
+	 */
+	public String getTimeReturnedString() {
+		return timeReturnedString;
+	}
 
-	public void setTimeReturnedString(String timeReturnedString) { this.timeReturnedString = timeReturnedString; }
+	/**
+	 * Set the time the Book on this Transaction was returned, using a String.
+	 *
+	 * @param timeReturnedString String to be used as the time the Book on this Transaction was returned.
+	 */
+	public void setTimeReturnedString(String timeReturnedString) {
+		this.timeReturnedString = timeReturnedString;
+	}
 
+	/**
+	 * Custom toString() method to display this Transaction's properties in the form of a String.
+	 *
+	 * @return a custom String displaying information about this Transaction object.
+	 */
 	@Override
 	public String toString() {
 		StringBuilder string = new StringBuilder("\n\"");
