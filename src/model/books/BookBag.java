@@ -6,8 +6,7 @@ import java.util.LinkedList;
 import java.util.TreeSet;
 
 /**
- * A container class that uses a TreeSet to store, as well as allow perusal and manipulation of, a large collection of
- * Book objects.
+ * A container class that uses a TreeSet to manage a large collection of Book objects
  */
 public class BookBag implements Serializable
 {
@@ -23,6 +22,7 @@ public class BookBag implements Serializable
 	}
 
 	/**
+	 * Get the whole TreeSet.
 	 * @return the TreeSet of Books.
 	 */
 	public TreeSet<Book> getTreeSet() {

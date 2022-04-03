@@ -60,8 +60,8 @@ public class Main extends Application
 	@Override
 	public void init() {
 		try {
-			userBag = (UserBag) Utilities.load("out/Persistent/userbag");
-			library = (BookBag) Utilities.load("out/Persistent/library");
+			userBag = (UserBag) Utilities.load("out/persistent/userbag");
+			library = (BookBag) Utilities.load("out/persistent/library");
 			if (!userBag.containsUsername("Jane"))
 				userBag.insert(new Admin("Jane", "Doe", new ContactInfo(new Name("Jane", "Doe"), "N/A", "N/A", "N/A", "N/A", "N/A")));
 			if (!userBag.containsUsername("John"))
@@ -110,8 +110,8 @@ public class Main extends Application
 	@Override
 	public void stop() {
 		try {
-			Utilities.save(userBag, "out/Persistent/userbag");
-			Utilities.save(library, "out/Persistent/library");
+			Utilities.save(userBag, "out/persistent/userbag");
+			Utilities.save(library, "out/persistent/library");
 		} catch (Exception exception) {
 			exception.printStackTrace();
 		}

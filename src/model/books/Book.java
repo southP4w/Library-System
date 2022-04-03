@@ -93,7 +93,9 @@ public class Book implements Comparable<Book>, Serializable
 	}
 
 	/**
-	 * @return this Book's title
+	 * Retrieve the title of this Book.
+	 *
+	 * @return this Book's title.
 	 */
 	public String getTitle() {
 		return title;
@@ -109,6 +111,8 @@ public class Book implements Comparable<Book>, Serializable
 	}
 
 	/**
+	 * Retrieve the title of this Book.
+	 *
 	 * @return this Book's ISBN.
 	 */
 	public String getIsbn() {
@@ -136,6 +140,8 @@ public class Book implements Comparable<Book>, Serializable
 	}
 
 	/**
+	 * Retrieve the Author(s) of this Book.
+	 *
 	 * @return the LinkedList of Authors for this Book.
 	 */
 	public LinkedList<Author> getAuthors() {
@@ -143,6 +149,8 @@ public class Book implements Comparable<Book>, Serializable
 	}
 
 	/**
+	 * Retrieve the main Author of this Book.
+	 *
 	 * @return the first (lead) Author of this Book.
 	 */
 	public Author getAuthor() {
@@ -150,6 +158,8 @@ public class Book implements Comparable<Book>, Serializable
 	}
 
 	/**
+	 * Retrieve the Author(s) of this Book in the form of a String.
+	 *
 	 * @return this Book's list of Authors in the form of a String.
 	 */
 	public String getAuthorsAsString() {
@@ -183,7 +193,9 @@ public class Book implements Comparable<Book>, Serializable
 	}
 
 	/**
-	 * @return the available number of copies of this Book remaining in the library.
+	 * Get the number of available copies of this Book remaining in the library.
+	 *
+	 * @return the number of available copies of this Book remaining in the library.
 	 */
 	public int getAvailableInventory() {
 		return availableInventory;
@@ -199,13 +211,17 @@ public class Book implements Comparable<Book>, Serializable
 	}
 
 	/**
-	 * @return the total number of copies of this Book remaining in the Library.
+	 * Get the total number of copies of this Book remaining in the library.
+	 *
+	 * @return the total number of copies of this Book remaining in the library.
 	 */
 	public int getTotalInventory() {
 		return totalInventory;
 	}
 
 	/**
+	 * Get the time at which this Book was borrowed.
+	 *
 	 * @return the time at which this Book was borrowed.
 	 */
 	public LocalDateTime getTimeBorrowedAt() {
@@ -222,6 +238,8 @@ public class Book implements Comparable<Book>, Serializable
 	}
 
 	/**
+	 * Get the time this Book is due to be returned.
+	 *
 	 * @return the time this Book is due to be returned.
 	 */
 	public LocalDateTime getTimeDue() {
@@ -238,6 +256,8 @@ public class Book implements Comparable<Book>, Serializable
 	}
 
 	/**
+	 * Get the time this Book was returned.
+	 *
 	 * @return the time this Book was returned.
 	 */
 	public LocalDateTime getTimeReturned() {
@@ -254,6 +274,8 @@ public class Book implements Comparable<Book>, Serializable
 	}
 
 	/**
+	 * Get the time this Book was returned, in the form of a String.
+	 *
 	 * @return the time this Book was returned, in the form of a String.
 	 */
 	public String getTimeReturnedString() {
@@ -263,6 +285,8 @@ public class Book implements Comparable<Book>, Serializable
 	}
 
 	/**
+	 * Get the time this Book was borrowed, in the form of a String.
+	 *
 	 * @return the time this Book was borrowed, in the form of a String.
 	 */
 	public String getTimeBorrowedAtString() {
@@ -272,6 +296,8 @@ public class Book implements Comparable<Book>, Serializable
 	}
 
 	/**
+	 * Get the time this Book is due to be returned, in the form of a String.
+	 *
 	 * @return the time this Book is due to be returned, in the form of a String.
 	 */
 	public String getTimeDueString() {

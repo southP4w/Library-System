@@ -200,7 +200,8 @@ public class Utilities
 	}
 
 	/**
-	 * @return a randomly-generated price between $10.00 and $190.00.
+	 * Emits a random price between $10.00 and $190.00
+	 * @return a randomly-generated double.
 	 */
 	public static double emitPrice() {
 		Random rand = new Random();
@@ -263,8 +264,6 @@ public class Utilities
 		} catch (FileNotFoundException e) {
 			e.printStackTrace();
 		}
-
-//		FXCollections.observableList(states);
 
 		return FXCollections.observableList(states);
 	}

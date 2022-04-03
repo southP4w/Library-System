@@ -306,7 +306,7 @@ public class AdminPanelController implements Initializable
 	}
 
 	/**
-	 * Called when the 'Search' button (in the 'Search & Update Users' section) is clicked. Allows the Admin to search
+	 * Called when the 'Search' button (in the 'Search and Update Users' section) is clicked. Allows the Admin to search
 	 * for a User by username.
 	 *
 	 * @param actionEvent 'Search' button clicked.
