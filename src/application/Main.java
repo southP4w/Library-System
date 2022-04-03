@@ -138,8 +138,8 @@ public class Main extends Application
 	 * @throws FileNotFoundException if the file in the path specified in Utilities.emitTitles() is not found.
 	 */
 	private void fillBookBag() throws FileNotFoundException {
-		String[] titles = Utilities.emitTitles("Input Files/textbook_titles.txt"), isbns = Utilities.emitISBNs("Input Files/textbook_isbns.txt");
-		Name[] names = Utilities.emitNames("Input Files/First_Names.txt", "Input Files/Last_Names.txt");
+		String[] titles = Utilities.emitTitles("input_files/textbook_titles.txt"), isbns = Utilities.emitISBNs("input_files/textbook_isbns.txt");
+		Name[] names = Utilities.emitNames("input_files/First_Names.txt", "input_files/Last_Names.txt");
 		LinkedList<Book> books = new LinkedList<>();
 		for (int i = 0; i < titles.length; i++)
 			books.add(new Book(titles[i], isbns[i]));
@@ -156,7 +156,7 @@ public class Main extends Application
 	 * @throws FileNotFoundException if the file in the path specified in Utilities.emitNames() is not found.
 	 */
 	private void fillUserBag() throws FileNotFoundException {
-		Name[] names = Utilities.emitNames("Input Files/First_Names.txt", "Input Files/Last_Names.txt");
+		Name[] names = Utilities.emitNames("input_files/First_Names.txt", "input_files/Last_Names.txt");
 		Random randomIndex = new Random();
 		for (int i = 0; i < 100; i++)
 			userBag.insert(new User("user" + i, "default", new ContactInfo(names[randomIndex.nextInt(100)])));
