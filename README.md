@@ -1,5 +1,7 @@
 # Library-System
 
+Now available in Linux!
+
 INSTRUCTIONS:
 
 Two default accounts are 'built-in' to this program:
